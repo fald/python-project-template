@@ -28,10 +28,10 @@ jobs:
       - name: Lint
         run: ruff check .
 
-      # Perhaps better under unit test, but this is probably
-      # fine.
-      - name: Smoke test
-        run: python -c "import project_package"
+      # Is now under unit test just so pytest doesn't throw a hissy fit when tests/
+      # is otherwise empty.
+      # - name: Smoke test
+      #   run: python -c "import project_package"
 
       - name: Run tests
         run: pytest
